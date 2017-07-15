@@ -8,6 +8,7 @@ def main():
     print sort.bubble_sort(a[:])
     print sort.insertion_sort(a[:])
     print sort.selection_sort(a[:])
+    print sort.shell_sort(a[:])
 
 
 if __name__ == '__main__':

@@ -20,6 +20,9 @@ class BasicTests(unittest.TestCase):
     def test_selection(self):
         self._test_sort(sort.selection_sort)
 
+    def test_shell(self):
+        self._test_sort(sort.shell_sort)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
