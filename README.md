@@ -5,5 +5,5 @@
 
 ## 排序参考
 
-排序可视化: http://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
-Big-O Complexity Chart: http://bigocheatsheet.com/
+* 排序可视化: http://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
+* Big-O Complexity Chart: http://bigocheatsheet.com/
