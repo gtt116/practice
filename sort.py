@@ -61,3 +61,31 @@ def shell_sort(items):
             items[j] = tmp
         step = int(round(step / 2))
     return _
+
+
+def merge_sort(items):
+    """
+    O(nlogn)
+    """
+    if len(items) <= 1:
+        return items
+
+    num = int(len(items) / 2)
+    left = merge_sort(items[:num])
+    right = merge_sort(items[num:])
+    return _merge(left, right)
+
+
+def _merge(left, right):
+    l, r = 0, 0
+    result = []
+    while l < len(left) and r < len(right):
+        if left[l] < right[r]:
+            result.append(left[l])
+            l += 1
+        else:
+            result.append(right[r])
+            r += 1
+    result += left[l:]
+    result += right[r:]
+    return result

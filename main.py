@@ -9,6 +9,7 @@ def main():
     print sort.insertion_sort(a[:])
     print sort.selection_sort(a[:])
     print sort.shell_sort(a[:])
+    print sort.merge_sort(a[:])
 
 
 if __name__ == '__main__':
