@@ -3,7 +3,9 @@
 
 一些编程练习，比如排序，搜索等。
 
-## 排序参考
+## 排序算法
+
+[![big-o](https://raw.githubusercontent.com/gtt116/practice/master/images/big-o-cheat-sheet-poster.png)](http://bigocheatsheet.com/)
+from: http://bigocheatsheet.com/
 
 * 排序可视化: http://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
-* Big-O Complexity Chart: http://bigocheatsheet.com/
