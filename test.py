@@ -1,4 +1,5 @@
 import unittest
+import time
 import data
 import sort
 
@@ -9,12 +10,15 @@ class BasicTests(unittest.TestCase):
         """
         If side_effect is False means the sort method will return a new list.
         """
-        items = data.random_all(100)
+        items = data.random_all(3000)
         expected = sorted(items)
+        start = time.time()
         if side_effect:
             sort_method(items)
         else:
             items = sort_method(items)
+        end = time.time()
+        print 'Using %.4fs' % (end - start)
         self.assertEqual(expected, items)
 
     def test_bubble(self):
