@@ -4,7 +4,7 @@ import data
 import sort
 
 
-class BasicTests(unittest.TestCase):
+class SorterTests(unittest.TestCase):
 
     def _test_sort(self, sort_method, side_effect=True):
         """
