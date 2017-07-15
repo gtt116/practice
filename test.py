@@ -18,7 +18,7 @@ class SorterTests(unittest.TestCase):
         else:
             items = sort_method(items)
         end = time.time()
-        print 'Using %.4fs' % (end - start)
+        print '%s using %.4fs' % (sort_method.__name__, end - start)
         self.assertEqual(expected, items)
 
     def test_bubble(self):
@@ -35,6 +35,9 @@ class SorterTests(unittest.TestCase):
 
     def test_merge(self):
         self._test_sort(sort.merge_sort, False)
+
+    def test_quick(self):
+        self._test_sort(sort.quick_sort, False)
 
 
 if __name__ == '__main__':

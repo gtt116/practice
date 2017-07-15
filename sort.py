@@ -65,7 +65,7 @@ def shell_sort(items):
 
 def merge_sort(items):
     """
-    O(nlogn)
+    The first O(nlogn)
     """
     if len(items) <= 1:
         return items
@@ -89,3 +89,30 @@ def _merge(left, right):
     result += left[l:]
     result += right[r:]
     return result
+
+
+def quick_sort(items):
+    """
+    Another O(nlogn) algorithm
+    """
+    return _quick_sort(items, 0, len(items) - 1)
+
+
+def _quick_sort(items, left, right):
+    if left >= right :
+        return items
+
+    key = items[left]
+    lp = left
+    rp = right
+    while lp < rp :
+        while items[rp] >= key and lp < rp :
+            rp -= 1
+        while items[lp] <= key and lp < rp :
+            lp += 1
+        items[lp], items[rp] = items[rp], items[lp]
+    items[left], items[lp] = items[lp], items[left]
+
+    _quick_sort(items, left, lp - 1)
+    _quick_sort(items, rp + 1, right)
+    return items
