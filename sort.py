@@ -69,7 +69,7 @@ def shell_sort(items):
 
 def merge_sort(items):
     """
-    The first O(nlogn)
+    The first O(nlogn) sort algorithm.
     """
     if len(items) <= 1:
         return items
@@ -81,6 +81,13 @@ def merge_sort(items):
 
 
 def _merge(left, right):
+    """
+    Merge two list to one.
+
+    :param left: list
+    :param right: list
+    :returns: the merged list.
+    """
     l, r = 0, 0
     result = []
     while l < len(left) and r < len(right):
@@ -116,6 +123,7 @@ def _quick_sort(items, left, right):
             low += 1
         _swap(items, low, high)
 
+    # here low == high, so swap left with low with the same result
     _swap(items, left, low)
 
     _quick_sort(items, left, low - 1)
