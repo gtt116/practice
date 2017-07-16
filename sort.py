@@ -1,15 +1,19 @@
+def _swap(l, a, b):
+    l[a], l[b] = l[b], l[a]
+
+
 def bubble_sort(items):
     """
     O(n^2), swap the largest one to the end of list.
     """
-    times = 0
+    _ = 0
     n = len(items)
     for i in range(n):
         for j in range(1, n-i):
             if items[j-1] > items[j]:
-                items[j-1], items[j] = items[j], items[j-1]
-            times += 1
-    return times
+                _swap(items, j-1, j)
+            _ += 1
+    return _
 
 
 def selection_sort(items):
@@ -25,7 +29,7 @@ def selection_sort(items):
             if items[j] < items[min_]:
                 min_ = j
             _ += 1
-        items[i], items[min_] = items[min_], items[i]
+        _swap(items, i, min_)
     return _
 
 
@@ -37,7 +41,7 @@ def insertion_sort(items):
     for i in range(1, len(items)):
         j = i
         while j > 0 and items[j] < items[j-1]:
-            items[j], items[j-1] = items[j-1], items[j]
+            _swap(items, j, j-1)
             j -= 1
             _ += 1
     return _
@@ -99,20 +103,21 @@ def quick_sort(items):
 
 
 def _quick_sort(items, left, right):
-    if left >= right :
+    if left >= right:
         return items
 
-    key = items[left]
-    lp = left
-    rp = right
-    while lp < rp :
-        while items[rp] >= key and lp < rp :
-            rp -= 1
-        while items[lp] <= key and lp < rp :
-            lp += 1
-        items[lp], items[rp] = items[rp], items[lp]
-    items[left], items[lp] = items[lp], items[left]
+    low = left
+    high = right
 
-    _quick_sort(items, left, lp - 1)
-    _quick_sort(items, rp + 1, right)
+    while low < high:
+        while items[high] >= items[left] and low < high:
+            high -= 1
+        while items[low] <= items[left] and low < high:
+            low += 1
+        _swap(items, low, high)
+
+    _swap(items, left, low)
+
+    _quick_sort(items, left, low - 1)
+    _quick_sort(items, high + 1, right)
     return items
