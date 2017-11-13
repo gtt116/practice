@@ -39,6 +39,9 @@ class SorterTests(unittest.TestCase):
     def test_quick(self):
         self._test_sort(sort.quick_sort, False)
 
+    def test_quick_fancy(self):
+        self._test_sort(sort.quick_fancy, False)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

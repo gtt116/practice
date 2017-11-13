@@ -129,3 +129,22 @@ def _quick_sort(items, left, right):
     _quick_sort(items, left, low - 1)
     _quick_sort(items, high + 1, right)
     return items
+
+
+def quick_fancy(items):
+    """
+    Another fancy version of quick sort, which is more readable but
+    not very efficient.
+    """
+    if len(items) <= 1:
+        return items
+    pivot = items[len(items) / 2]
+    left, middle, right = [], [], []
+    for a in items:
+        if a < pivot:
+            left.append(a)
+        elif a == pivot:
+            middle.append(a)
+        else:  # a > pivot
+            right.append(a)
+    return quick_fancy(left) + middle + quick_fancy(right)
